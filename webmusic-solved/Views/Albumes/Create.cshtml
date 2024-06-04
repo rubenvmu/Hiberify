@@ -1,4 +1,5 @@
-﻿@model webmusic_solved.Models.Albumes
+﻿<div id="contenedor">
+@model webmusic_solved.Models.Albumes
 
 @{
     ViewData["Title"] = "Create";
@@ -41,3 +42,5 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+</div>
