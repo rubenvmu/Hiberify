@@ -11,7 +11,6 @@ public partial class Artistas
     [Required]
     public string? Nombre { get; set; }
     [StringLength(60, MinimumLength = 3)]
-    [Required]
     public string? Genero { get; set; }
 
     public DateOnly? Fecha { get; set; }

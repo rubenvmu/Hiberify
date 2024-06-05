@@ -13,7 +13,6 @@ public partial class Albumes
 
     public DateOnly? Fecha { get; set; }
     [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
-    [Required]
     [StringLength(30)]
     public string? Titulo { get; set; }
 
