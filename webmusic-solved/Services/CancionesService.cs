@@ -12,7 +12,7 @@ public class CancionesService : ICancionesService
 
     public async Task<IEnumerable<Canciones>> GetCanciones(string searchString)
     {
-        if (_context.Albumes == null)
+        if (_context.Canciones == null)
         {
             throw new InvalidOperationException("Fallo");
         }

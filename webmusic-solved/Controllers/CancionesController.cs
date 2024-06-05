@@ -21,10 +21,10 @@ namespace webmusic_solved.Controllers
         }
 
         // GET: Canciones
-        public async Task<IActionResult> Index(string searchString, string searchString2)
+        public async Task<IActionResult> Index(string searchString)
         {
-            var albumes = await _cancionesService.GetCanciones(searchString);
-            return View(albumes);
+            var canciones = await _cancionesService.GetCanciones(searchString);
+            return View(canciones);
         }
 
         // GET: Canciones/Details/5

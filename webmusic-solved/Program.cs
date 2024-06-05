@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using webmusic_solved.Models;
+using webmusic_solved.Services.Repo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<GrupoAContext>(
     options => options.UseSqlServer("server=musicagrupos.databaase.windows.net;database=GrupoA;user=as;password=P0t@t0P0t@t0"));
 builder.Services.AddScoped<IAlbumService, AlbumService>();
+builder.Services.AddScoped<ICancionesService, CancionesService>();
+builder.Services.AddScoped<IAlbumesRepositorio, fakeAlbumesRepositorio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
