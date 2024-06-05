@@ -8,8 +8,18 @@
 <h1>Albumes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear canción</a>
 </p>
+<form asp-controller="Albumes" asp-action="Index" method="get">
+    <p>
+        Buscar por género: <input type="text" name="SearchString2" />
+        <input type="submit" value="Filter" />
+    </p>
+    <p>
+        Buscar por canción: <input type="text" name="SearchString"/>
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

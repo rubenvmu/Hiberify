@@ -12,16 +12,19 @@ namespace webmusic_solved.Controllers
     public class AlbumesController : Controller
     {
         private readonly GrupoAContext _context;
+        private readonly IAlbumService _albumService;
 
-        public AlbumesController(GrupoAContext context)
+        public AlbumesController(GrupoAContext context, IAlbumService albumes)
         {
             _context = context;
+            _albumService = albumes;
         }
 
         // GET: Albumes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, string searchString2)
         {
-            return View(await _context.Albumes.ToListAsync());
+            var albumes = await _albumService.GetAlbumes(searchString, searchString2);
+            return View(albumes);
         }
 
         // GET: Albumes/Details/5
