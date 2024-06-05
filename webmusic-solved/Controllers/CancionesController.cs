@@ -12,17 +12,19 @@ namespace webmusic_solved.Controllers
     public class CancionesController : Controller
     {
         private readonly GrupoAContext _context;
+        private readonly ICancionesService _cancionesService;
 
-        public CancionesController(GrupoAContext context)
+        public CancionesController(GrupoAContext context, ICancionesService canciones)
         {
             _context = context;
+            _cancionesService = canciones;
         }
 
         // GET: Canciones
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, string searchString2)
         {
-            var grupoAContext = _context.Canciones.Include(c => c.Album).Include(c => c.Artista);
-            return View(await grupoAContext.ToListAsync());
+            var albumes = await _cancionesService.GetCanciones(searchString);
+            return View(albumes);
         }
 
         // GET: Canciones/Details/5
