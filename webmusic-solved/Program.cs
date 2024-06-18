@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<GrupoAContext>(
-    options => options.UseSqlServer("server=musicagrupos.databaase.windows.net;database=GrupoA;user=as;password=P0t@t0P0t@t0"));
+builder.Services.AddDbContext<GrupoAContext>
+    (options => options.UseSqlServer("'server=musicagrupos.databaase.windows.net;database=GrupoA;Integrated Security=True"));
 builder.Services.AddScoped<IAlbumService, AlbumService>();
 builder.Services.AddScoped<ICancionesService, CancionesService>();
 builder.Services.AddScoped<IAlbumesRepositorio, fakeAlbumesRepositorio>();

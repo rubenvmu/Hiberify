@@ -1,6 +1,6 @@
 ﻿namespace webmusic_solved.Models
 {
-    public class giras
+    public class Giras
     {
         public int Id { get; set; }
 
