@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using webmusic_solved.Models;
-using webmusic_solved.Services.Repo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +18,6 @@ builder.Services.AddDbContext<GrupoAContext>(options =>
 });
 builder.Services.AddScoped<IAlbumService, AlbumService>();
 builder.Services.AddScoped<ICancionesService, CancionesService>();
-builder.Services.AddScoped<IAlbumesRepositorio, fakeAlbumesRepositorio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

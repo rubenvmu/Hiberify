@@ -9,21 +9,12 @@ using webmusic_solved.Models;
 
 namespace webmusic_solved.Controllers
 {
-    public class AlbumesController : Controller
+    public class AlbumesController(GrupoAContext context, IAlbumService albumService) : Controller
     {
-        private readonly GrupoAContext _context;
-        private readonly IAlbumService _albumService;
-
-        public AlbumesController(GrupoAContext context, IAlbumService albumes)
-        {
-            _context = context;
-            _albumService = albumes;
-        }
-
         // GET: Albumes
         public async Task<IActionResult> Index(string searchString, string searchString2)
         {
-            var albumes = await _albumService.GetAlbumes(searchString, searchString2);
+            var albumes = await albumService.GetAlbumes(searchString, searchString2);
             return View(albumes);
         }
 
@@ -35,7 +26,7 @@ namespace webmusic_solved.Controllers
                 return NotFound();
             }
 
-            var albumes = await _context.Albumes
+            var albumes = await context.Albumes
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (albumes == null)
             {
@@ -60,8 +51,8 @@ namespace webmusic_solved.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(albumes);
-                await _context.SaveChangesAsync();
+                context.Add(albumes);
+                await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(albumes);
@@ -75,7 +66,7 @@ namespace webmusic_solved.Controllers
                 return NotFound();
             }
 
-            var albumes = await _context.Albumes.FindAsync(id);
+            var albumes = await context.Albumes.FindAsync(id);
             if (albumes == null)
             {
                 return NotFound();
@@ -99,8 +90,8 @@ namespace webmusic_solved.Controllers
             {
                 try
                 {
-                    _context.Update(albumes);
-                    await _context.SaveChangesAsync();
+                    context.Update(albumes);
+                    await context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -126,7 +117,7 @@ namespace webmusic_solved.Controllers
                 return NotFound();
             }
 
-            var albumes = await _context.Albumes
+            var albumes = await context.Albumes
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (albumes == null)
             {
@@ -141,19 +132,19 @@ namespace webmusic_solved.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var albumes = await _context.Albumes.FindAsync(id);
+            var albumes = await context.Albumes.FindAsync(id);
             if (albumes != null)
             {
-                _context.Albumes.Remove(albumes);
+                context.Albumes.Remove(albumes);
             }
 
-            await _context.SaveChangesAsync();
+            await context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AlbumesExists(int id)
         {
-            return _context.Albumes.Any(e => e.Id == id);
+            return context.Albumes.Any(e => e.Id == id);
         }
     }
 }
