@@ -1,13 +1,11 @@
-﻿
-    @{
-        ViewData["Title"] = "Home Page";
-    }
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
 
-<h1>Home</h1>
-
-    <div class="text-center">
-        <h1 style="color: black">music-webpage-04</h1>
-        <a><h4 style="color: black">https://github.com/rvmu-rvmu/webpage-music-04.git</h4></a>
-    </div>
-
-    <img id="o" src="https://th.bing.com/th/id/R.f6f71e6d4dba067aa24e69e0115e7f18?rik=S1aYYH1odIyH3Q&pid=ImgRaw&r=0" />
+<main class="container-fluid">
+    @await Html.PartialAsync("_Hero")
+    @await Html.PartialAsync("_Carrusel")
+    @await Html.PartialAsync("_Leaderboard")
+    @await Html.PartialAsync("_ArtistasMomento")
+    @await Html.PartialAsync("_Subscription")
+</main>
