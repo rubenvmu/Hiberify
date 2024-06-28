@@ -269,10 +269,10 @@ $.validator.addMethod( "cifES", function( value, element ) {
 		}
 	}
 
-	all_sum = even_sum + odd_sum;
-	control_digit = ( 10 - ( all_sum ).toString().substr( -1 ) ).toString();
-	control_digit = parseInt( control_digit, 10 ) > 9 ? "0" : control_digit;
-	control_letter = "JABCDEFGHI".substr( control_digit, 1 ).toString();
+	allSum = evenSum + oddSum;
+	controlDigit = (10 - allSum.toString().slice(-1)).toString();
+	controlDigit = parseInt(controlDigit, 10) > 9 ? "0" : controlDigit;
+	controlLetter = "JABCDEFGHI".slice(controlDigit, controlDigit + 1);
 
 	// Control must be a digit
 	if ( letter.match( /[ABEH]/ ) ) {

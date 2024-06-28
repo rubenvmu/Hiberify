@@ -54,9 +54,6 @@
    * --------------------------------------------------------------------------
    */
 
-    $(document).ready(function () {
-        new PureCounter();
-    });
 
 
   const getUID = prefix => {
