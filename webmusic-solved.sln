@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webmusic-solved", "webmusic-solved\webmusic-solved.csproj", "{C174F531-56EF-4613-9DA3-0519F32C93EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webmusic-solved", "webmusic-solved\webmusic-solved.csproj", "{C174F531-56EF-4613-9DA3-0519F32C93EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{88B2303A-5393-471F-B542-6ED75CCBF7E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C174F531-56EF-4613-9DA3-0519F32C93EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C174F531-56EF-4613-9DA3-0519F32C93EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C174F531-56EF-4613-9DA3-0519F32C93EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B2303A-5393-471F-B542-6ED75CCBF7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B2303A-5393-471F-B542-6ED75CCBF7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B2303A-5393-471F-B542-6ED75CCBF7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B2303A-5393-471F-B542-6ED75CCBF7E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
