@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using webmusic_solved.Models;
 
 namespace webmusic_solved.Models;
 
@@ -82,4 +83,6 @@ public partial class GrupoAContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+public DbSet<webmusic_solved.Models.Giras> Giras { get; set; } = default!;
 }
