@@ -5,23 +5,24 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Albumes</h1>
+<div class="container">
+    <h1>Albumes</h1>
 
-<p>
-    <a asp-action="Create">Crear canción</a>
-</p>
-<form asp-controller="Albumes" asp-action="Index" method="get">
     <p>
-        Buscar por album: <input type="text" name="SearchString" required=""/>
-        <input type="submit" value="Filter"/>
+        <a asp-action="Create">Crear canción</a>
     </p>
-    <p>
-        Buscar por género: <input type="text" name="SearchString2"=""/>
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-<table class="table">
-    <thead>
+    <form asp-controller="Albumes" asp-action="Index" method="get">
+        <p>
+            Buscar por album: <input type="text" name="SearchString" required=""/>
+            <input type="submit" value="Filter"/>
+        </p>
+        <p>
+            Buscar por género: <input type="text" name="SearchString2"=""/>
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <table class="table">
+        <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Genero)
@@ -34,27 +35,28 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 
+</div>
 </div>
