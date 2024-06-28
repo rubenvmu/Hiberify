@@ -13,7 +13,7 @@ public partial class Artistas
     [StringLength(60, MinimumLength = 3)]
     public string? Genero { get; set; }
 
-    public DateOnly? Fecha { get; set; }
+    public DateTime Fecha { get; set; }
 
     public virtual ICollection<Canciones> Canciones { get; set; } = new List<Canciones>();
 

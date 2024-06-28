@@ -11,7 +11,7 @@ public partial class Albumes
     [Required]
     public string? Genero { get; set; }
 
-    public DateOnly? Fecha { get; set; }
+    public DateTime Fecha { get; set; }
     [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
     [StringLength(30)]
     public string? Titulo { get; set; }

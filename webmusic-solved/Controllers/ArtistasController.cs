@@ -21,7 +21,7 @@ namespace webmusic_solved.Controllers
         // GET: Artistas
         public async Task<IActionResult> Index()
         {
-            var albums = _context.Albumes.OrderBy(a => a.Titulo).ToList();
+            var albums = _context.Albumes.OrderBy(a => a.Titulo ?? string.Empty).ToList();
             return View(await _context.Artistas.ToListAsync());
         }
 

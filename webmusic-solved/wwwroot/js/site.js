@@ -1,3 +1,5 @@
+
+
 $('.carousel .carousel-item').each(function () {
   var minPerSlide = 4;
   var next = $(this).next();
@@ -174,35 +176,6 @@ dateDisplay.textContent = `${formattedDate}`;
     selector: '.portfolio-lightbox'
   });
 
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
   window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
@@ -212,4 +185,6 @@ dateDisplay.textContent = `${formattedDate}`;
     })
   });
 
-  new PureCounter();
+document.addEventListener("DOMContentLoaded", function () {
+    new PureCounter();
+});

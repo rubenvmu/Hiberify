@@ -54,6 +54,10 @@
    * --------------------------------------------------------------------------
    */
 
+    $(document).ready(function () {
+        new PureCounter();
+    });
+
 
   const getUID = prefix => {
     do {
@@ -592,15 +596,14 @@
         defaultPrevented = jQueryEvent.isDefaultPrevented();
       }
 
-      if (isNative) {
-        evt = document.createEvent('HTMLEvents');
-        evt.initEvent(typeEvent, bubbles, true);
-      } else {
-        evt = new CustomEvent(event, {
-          bubbles,
-          cancelable: true
-        });
-      } // merge custom information in our event
+        if (isNative) {
+            evt = new Event(typeEvent, { bubbles, cancelable: true });
+        } else {
+            evt = new CustomEvent(event, {
+                bubbles,
+                cancelable: true
+            });
+        }
 
 
       if (typeof args !== 'undefined') {
@@ -994,13 +997,13 @@
       return normalizeData(element.getAttribute(`data-bs-${normalizeDataKey(key)}`));
     },
 
-    offset(element) {
-      const rect = element.getBoundingClientRect();
-      return {
-        top: rect.top + window.pageYOffset,
-        left: rect.left + window.pageXOffset
-      };
-    },
+      offset(element) {
+          const rect = element.getBoundingClientRect();
+          return {
+              top: rect.top + window.scrollY,
+              left: rect.left + window.scrollX
+          };
+      },
 
     position(element) {
       return {
