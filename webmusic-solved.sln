@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webmusic-solved", "webmusic-solved\webmusic-solved.csproj", "{C174F531-56EF-4613-9DA3-0519F32C93EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webmusic-hiberify", "webmusic-solved\webmusic-hiberify.csproj", "{C174F531-56EF-4613-9DA3-0519F32C93EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{88B2303A-5393-471F-B542-6ED75CCBF7E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webmusic-hiberify-tests", "TestProject1\webmusic-hiberify-tests.csproj", "{88B2303A-5393-471F-B542-6ED75CCBF7E3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C174F531-56EF-4613-9DA3-0519F32C93EF} = {C174F531-56EF-4613-9DA3-0519F32C93EF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
