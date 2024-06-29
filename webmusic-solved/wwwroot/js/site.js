@@ -82,4 +82,6 @@ $('.carousel .carousel-item').each(function () {
     }
   }, true)
 
-
+document.addEventListener("DOMContentLoaded", function () {
+    new PureCounter();
+});
