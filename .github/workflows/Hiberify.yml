@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.Hiberify_7422 }}
+        publish-profile: ${{ secrets.Hiberify_F036 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
