@@ -1,14 +1,17 @@
-name: Compilar e implementar la aplicación de .NET Core en la aplicación web Hiberify
+name: Compilar e implementar la aplicación de .NET Core en la aplicación web Hiberify
+
 on:
   push:
     branches:
     - master
+
 env:
   AZURE_WEBAPP_NAME: Hiberify
   AZURE_WEBAPP_PACKAGE_PATH: webmusic-solved\published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x
   WORKING_DIRECTORY: webmusic-solved
+
 jobs:
   build:
     runs-on: windows-latest
@@ -19,20 +22,33 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
     - name: Restore
-      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+      run: dotnet restore webmusic-solved.csproj
     - name: Build
-      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+      run: dotnet build webmusic-solved.csproj --configuration ${{ env.CONFIGURATION }} --no-restore
     - name: Test
-      run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
+      run: dotnet test webmusic-solved.csproj --no-build
     - name: Publish
-      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      run: dotnet publish webmusic-solved.csproj --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     - name: Publish Artifacts
       uses: actions/upload-artifact@v3
       with:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-        node-version: '20'
   deploy:
+    runs-on: windows-latest
+    needs: build
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: webapp
+        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Deploy to Azure WebApp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.Hiberify_7422 }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
     runs-on: windows-latest
     needs: build
     steps:
