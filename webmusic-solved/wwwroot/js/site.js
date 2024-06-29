@@ -81,3 +81,5 @@ $('.carousel .carousel-item').each(function () {
       this.nextElementSibling.classList.toggle('dropdown-active')
     }
   }, true)
+
+

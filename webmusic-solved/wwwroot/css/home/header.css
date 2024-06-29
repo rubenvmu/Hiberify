@@ -1,0 +1,33 @@
+﻿#header {
+    height: 70px;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background: #000000;
+}
+
+    #header .logo h1 {
+        font-size: 26px;
+        margin: 0;
+        padding: 12px 0;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: -1px;
+        font-family: "Poppins", sans-serif;
+    }
+
+#compacto, h2, .btn-get-started {
+    z-index: 1; 
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 50px;
+}

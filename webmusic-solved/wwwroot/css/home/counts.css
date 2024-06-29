@@ -1,0 +1,17 @@
+﻿.counts {
+    background: #fff;
+    padding: 0 0 60px 0;
+}
+
+    .counts .counters span {
+        font-size: 48px;
+        display: block;
+        color: #fdc1e9;
+    }
+
+    .counts .counters p {
+        padding: 0;
+        margin: 0 0 20px 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+    }
