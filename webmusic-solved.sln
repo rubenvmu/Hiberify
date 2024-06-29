@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiberify", "webmusic-solved\hiberify.csproj", "{C174F531-56EF-4613-9DA3-0519F32C93EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hiberify-tests", "Test1\hiberify-tests.csproj", "{9ABBAA1C-02FE-4F39-A1AF-DFB20FD013C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tests_hiberify", "Test1\tests_hiberify.csproj", "{9ABBAA1C-02FE-4F39-A1AF-DFB20FD013C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,8 @@ using Moq;
 using webmusic_solved.Controllers;
 using webmusic_solved.Models;
 
-namespace webmusic_solved.Tests.Controllers
+
+namespace tests_hiberify.Controllers
 {
     public class CancionesControllerTests
     {
