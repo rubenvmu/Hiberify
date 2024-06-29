@@ -25,7 +25,7 @@ namespace webmusic_solved.Services.CounterSQL
         }
         public double GetMinutosMusicaCount()
         {
-            return _context.Canciones.Count() * 3.14;
+            return _context.Canciones.Count();
         }
     }
 }

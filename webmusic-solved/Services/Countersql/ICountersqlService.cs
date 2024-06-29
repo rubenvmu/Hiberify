@@ -6,6 +6,5 @@ namespace webmusic_solved.Services.CounterSQL
     {
         int GetCancionesCount();
         int GetArtistasCount();
-        double GetMinutosMusicaCount();
     }
 }
