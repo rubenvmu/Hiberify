@@ -1,2 +1,5 @@
 *.html linguist-vendored
 *.css linguist-vendored
+
+views/* linguist-vendored
+views/** linguist-vendored
